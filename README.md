@@ -8,7 +8,7 @@
 
 A production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that provides seamless integration with Atlassian Jira Cloud. This server enables AI assistants and MCP clients to fetch issue attachments, download attachment content, and interact with Jira data through a standardized interface.
 
-## 🚀 Features
+## Features
 
 - **Attachment Metadata Retrieval**: List all attachments for any Jira issue with metadata (ID, filename, MIME type)
 - **Batch Attachment Downloads**: Download multiple attachment files in parallel with automatic base64 encoding
@@ -17,13 +17,13 @@ A production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.i
 - **Stdio Transport**: Standard input/output communication for cross-platform compatibility
 - **Parallel Processing**: Efficient batch operations with concurrent API requests
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Node.js**: Version 18.x or higher
 - **Jira Cloud Account**: With API access enabled
 - **Jira API Token**: [Generate one here](https://id.atlassian.com/manage-profile/security/api-tokens)
 
-## � MCP Client Setup
+## MCP Client Setup
 
 To use this MCP server, you need to configure your MCP client (e.g., Claude Desktop, Cursor IDE, or other MCP-compatible clients).
 
@@ -37,7 +37,7 @@ Add the following configuration to your MCP client's settings file:
 {
   "mcpServers": {
     "custom-atlassian-mcp": {
-      "command": "npx ts-node /path/to/atlassian-custom-mcp/server.ts",
+      "command": "npx ts-node /path/to/custom-atlassian-mcp/server.ts",
       "args": [],
       "env": {
         "JIRA_DOMAIN": "your-organization.atlassian.net",
@@ -59,15 +59,15 @@ After configuration:
 
 ---
 
-## 💻 Local Development Setup
+## Local Development Setup
 
 If you want to modify or contribute to this project, follow these steps to set up your local development environment.
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd atlassian-custom-mcp
+git clone https://github.com/studcroc/custom-atlassian-mcp.git
+cd custom-atlassian-mcp
 ```
 
 ### 2. Install Dependencies
@@ -88,7 +88,7 @@ Start the MCP server:
 node server.ts
 ```
 
-## 🛠️ Available Tools
+## Available Tools
 
 ### 1. `jira_get_issue_attachments`
 
@@ -171,7 +171,7 @@ Downloads and returns the binary content of Jira attachments as base64-encoded d
 - Returns successful downloads even if some fail
 - Returns empty array if all attachments fail
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these guidelines:
 
@@ -181,7 +181,7 @@ Contributions are welcome! Please follow these guidelines:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 🙋 Support
+## Support
 
 For issues, questions, or contributions:
 
