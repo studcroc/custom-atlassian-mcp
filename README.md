@@ -1,3 +1,5 @@
+![Custom Atlassian MCP Server](./assets/banner.png)
+
 # Custom Atlassian MCP Server
 
 [![MCP](https://img.shields.io/badge/MCP-Compatible-blue)](https://modelcontextprotocol.io/)
@@ -41,7 +43,7 @@ Add the following configuration to your MCP client's settings file:
         "JIRA_DOMAIN": "your-organization.atlassian.net",
         "JIRA_EMAIL": "your-email@example.com",
         "JIRA_API_TOKEN": "your-api-token-here"
-        }
+      }
     }
   }
 }
@@ -98,7 +100,7 @@ Retrieves metadata for all attachments associated with a Jira issue.
 {
   issueId: string; // Jira issue key (e.g., "PROJ-123")
 }
-````
+```
 
 **Response**:
 
