@@ -23,45 +23,7 @@ A production-ready [Model Context Protocol (MCP)](https://modelcontextprotocol.i
 - **Jira Cloud Account**: With API access enabled
 - **Jira API Token**: [Generate one here](https://id.atlassian.com/manage-profile/security/api-tokens)
 
-## MCP Client Setup
-
-To use this MCP server, you need to configure your MCP client (e.g., Claude Desktop, Cursor IDE, or other MCP-compatible clients).
-
-### Configuration File
-
-Add the following configuration to your MCP client's settings file:
-
-**For Cursor IDE** (`.cursor/mcp.json`):
-
-```json
-{
-  "mcpServers": {
-    "custom-atlassian-mcp": {
-      "command": "npx ts-node /path/to/custom-atlassian-mcp/server.ts",
-      "args": [],
-      "env": {
-        "JIRA_DOMAIN": "your-organization.atlassian.net",
-        "JIRA_EMAIL": "your-email@example.com",
-        "JIRA_API_TOKEN": "your-api-token-here"
-      }
-    }
-  }
-}
-```
-
-### Verifying the Connection
-
-After configuration:
-
-1. Restart your MCP client
-2. The server should appear in your client's MCP servers list
-3. You should see the available tools: `jira_get_issue_attachments` and `jira_get_attachment_image`
-
----
-
-## Local Development Setup
-
-If you want to modify or contribute to this project, follow these steps to set up your local development environment.
+## Setup
 
 ### 1. Clone the Repository
 
@@ -76,17 +38,35 @@ cd custom-atlassian-mcp
 npm install
 ```
 
-### 3. Configure Environment Variables
+### 3. Configure MCP Client
 
-Create a `.env` file in the project root. Take reference from the `.env.template`
+Add the following configuration to your MCP client's settings file.
 
-### 4. Run the Server
+**For Cursor IDE** (`.cursor/mcp.json`):
 
-Start the MCP server:
-
-```bash
-node server.ts
+```json
+{
+  "mcpServers": {
+    "custom-atlassian-mcp": {
+      "command": "npx ts-node /absolute/path/to/custom-atlassian-mcp/server.ts",
+      "args": [],
+      "env": {
+        "JIRA_DOMAIN": "your-organization.atlassian.net",
+        "JIRA_EMAIL": "your-email@example.com",
+        "JIRA_API_TOKEN": "your-api-token-here"
+      }
+    }
+  }
+}
 ```
+
+### 4. Verify the Connection
+
+After configuration:
+
+1. Restart your MCP client
+2. The server should appear in your client's MCP servers list
+3. You should see the available tools: `jira_get_issue_attachments` and `jira_get_attachment_image`
 
 ## Available Tools
 
