@@ -38,6 +38,12 @@ cd custom-atlassian-mcp
 npm install
 ```
 
+### 3. Build
+
+```bash
+npm run build
+```
+
 ### 3. Configure MCP Client
 
 Add the following configuration to your MCP client's settings file.
@@ -48,7 +54,7 @@ Add the following configuration to your MCP client's settings file.
 {
   "mcpServers": {
     "custom-atlassian-mcp": {
-      "command": "npx ts-node /absolute/path/to/custom-atlassian-mcp/server.ts",
+      "command": "node /absolute/path/to/custom-atlassian-mcp/dist/server.js",
       "args": [],
       "env": {
         "JIRA_DOMAIN": "your-organization.atlassian.net",
